@@ -9,18 +9,20 @@ namespace SEDC.PizzaApp.Controllers
 {
     public class OrdersController : Controller
     {
+        [Route("SeeOrders")][Route("Orders")]
         public IActionResult Index()
         {
-            return View();
+            var Orders = OrdersList.Orders;
+            return View(Orders);
         }
         public IActionResult Details(int? id)
         {
-            if(id == null)
+            var Order = OrdersList.Orders.Where((x) => x.Id == id).FirstOrDefault();
+            if (id == null || Order == null)
             {
                 return new EmptyResult();
             }
-            var Orders = OrdersList.Orders;
-            return View(Orders);
+            return View(Order);
         }
         public IActionResult JsonData()
         {

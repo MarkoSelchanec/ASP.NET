@@ -54,10 +54,6 @@ namespace SEDC.PizzaApp
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
-                routes.MapRoute(
-                    name: "orders",
-                    template: "orders",
-                    defaults: new { controller = "Order", action = "Index" });
             });
         }
     }
