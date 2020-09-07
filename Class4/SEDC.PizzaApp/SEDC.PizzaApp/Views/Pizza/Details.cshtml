@@ -1,0 +1,13 @@
+﻿@model PizzaViewModel 
+<p>@ViewData["Title"]</p>
+<p>Pizza: </p>
+<p>@ViewBag.Name / @ViewBag.Price</p>
+
+@if (Model.IsOnPromotion)
+{
+<h4>@Model.Name is on promotion!</h4>
+}else 
+{
+<h4>@Model.Name is not on promotion!</h4>
+}
+<partial name="~/Views/Shared/_PizzaDetails.cshtml" />
