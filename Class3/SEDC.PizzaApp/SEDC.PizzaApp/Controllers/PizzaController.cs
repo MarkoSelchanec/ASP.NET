@@ -18,7 +18,8 @@ namespace SEDC.PizzaApp.Controllers
             ViewData.Add("Title", "Index");
             foreach (Pizza pizza in StaticDb.Pizzas)
             {
-                pizzas.Add(PizzaViewModelMapper.PizzaViewModel(pizza));
+                //pizzas.Add(PizzaViewModelMapper.PizzaViewModel(pizza));
+                pizzas.Add(pizza.CreatePizzaViewModel());
             }
             return View(pizzas); // returns ViewResult
         }
@@ -44,9 +45,9 @@ namespace SEDC.PizzaApp.Controllers
             if (id != null)
             {
                 var pizza = StaticDb.Pizzas.SingleOrDefault(x => x.Id == id);
-                ViewBag.Name = pizza.Name;
-                ViewBag.Price = pizza.Price;
-                return View();
+                //ViewBag.Name = pizza.Name;
+                //ViewBag.Price = pizza.Price;
+                return View(pizza.CreatePizzaViewModel());
             }
             return new EmptyResult();
         }
