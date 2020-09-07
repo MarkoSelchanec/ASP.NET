@@ -46,7 +46,7 @@ namespace SEDC.PizzaApp.Controllers
                 var pizza = StaticDb.Pizzas.SingleOrDefault(x => x.Id == id);
                 ViewBag.Name = pizza.Name;
                 ViewBag.Price = pizza.Price;
-                return View(ViewBag);
+                return View();
             }
             return new EmptyResult();
         }
