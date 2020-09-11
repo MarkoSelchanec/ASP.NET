@@ -1,0 +1,8 @@
+﻿@model User
+
+<h3>Are you sure that you want to delete the following user:</h3>
+<p>First Name: @Model.FirstName</p>
+<p>Last Name: @Model.LastName</p>
+<p>Address: @Model.Address</p>
+
+<a asp-action="ConfirmDelete" asp-route-id="@Model.Id">Confirm Delete</a>

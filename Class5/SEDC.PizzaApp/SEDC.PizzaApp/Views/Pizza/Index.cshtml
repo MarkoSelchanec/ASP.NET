@@ -1,0 +1,25 @@
+﻿@model List<Pizza>
+
+<h2>@ViewData["Title"]</h2>
+
+<a asp-controller="Pizza" asp-action="CreatePizza">Create a new pizza</a>
+<hr />
+@foreach (Pizza pizza in Model)
+{
+    <p>Name: @pizza.Name</p>
+    <p>Price: @pizza.Price</p>
+    <a asp-controller="Pizza" asp-action="EditPizza" asp-route-id="@pizza.Id">Edit Pizza</a>
+    <a asp-controller="Pizza" asp-action="DeletePizza" asp-route-id="@pizza.Id">Delete Pizza</a>
+    <hr />
+}
+
+
+@*<span>@ViewData["SharedMessage"]</span>
+
+    @section Scripts{
+    <script>
+        window.alert("Hello from Pizza Index View!")
+    </script>
+    <script src=""></script>
+    }*@
+

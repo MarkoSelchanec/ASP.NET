@@ -1,0 +1,7 @@
+﻿@model Pizza
+
+<h3>Are you sure that you want to delete the following pizza:</h3>
+<p>Pizza Name: @Model.Name</p>
+<p>Price: @Model.Price</p>
+
+<a asp-action="ConfirmDelete" asp-route-id="@Model.Id">Confirm Delete</a>
